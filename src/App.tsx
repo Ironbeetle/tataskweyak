@@ -163,11 +163,11 @@ function App() {
                   Managing Our Territory
                 </div>
                 <div className="w-full lg:w-1/5">
-                  <div className="panelalt flex flex-row justify-center backdrop-blur-lg p-8">
-                    <a href="https://tcntrsc.ca" target='_blank'>
-                      <div className="apptext">
-                        Learn More
-                      </div>
+                  <div className="flex flex-row justify-center backdrop-blur-lg p-8">
+                    <a href="https://tcntrsc.ca" className='panelalt'>
+                    <div className="apptext">
+                      Learn More
+                    </div>
                     </a>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ function App() {
               <div></div>
               <div className="flex flex-col justify-center items-center p-4">
                 <div className="w-full lg:w-5/6">
-                  <a href="https://tcntrsc.ca" className="panelalt" target='_blank'>
+                    <a href="https://tcntrsc.ca" className='panelalt'>
                     <img src='/ourhomebkg.jpg' className='scale-image'/>
                     <div className="apptextBold flex flex-col justify-center items-center p-4">
                       Managing Our Territory

@@ -10,6 +10,7 @@ const CommSysInfo = lazy(() => import('./TCN_Portal/System_Info'));
 const TCN_Greet = lazy (() => import('./TCN_Members/TCN_Greet'));
 const ForgotPassword = lazy(() => import('./components/ForgotPassword'));
 const ResetPassword = lazy(() => import('./components/ResetPassword'));
+const NamaoTCN = lazy(() => import('./pages/NamaoTCN'));
 
 export const routes: RouteObject[] = [
   {
@@ -39,6 +40,10 @@ export const routes: RouteObject[] = [
   {
     path: '/reset-password',
     element: <ResetPassword/>
+  },
+   {
+    path: '/pages/NamaoTCN',
+    element: <NamaoTCN/>
   },
   {
     path: '/TCN_Portal/System_Info',

@@ -66,7 +66,7 @@ export default function TCN_Greet() {
              
               <div className='w-full lg:w-5/7'>
                   <div className="techtxtmb flex flex-col justify-center items-center p-2">
-                    <a href="https://tcnaux.ca" className="panelalt" target='_blank' >
+                    <a href="http://66.102.140.117" className="panelalt" target='_blank' >
                       <img src='/TCNintro.jpg' className='scale-image'/>
                       <div className="apptext">
                         Enter TCN Member Portal
