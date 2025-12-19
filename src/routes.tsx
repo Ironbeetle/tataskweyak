@@ -7,10 +7,7 @@ const AboutTCN = lazy(() => import('./pages/AboutTCN'));
 const WorldViewHome = lazy(() => import('./pages/WorldViewHome'));
 const TCNEcDev = lazy(() => import('./pages/TCNEcDev'));
 const CommSysInfo = lazy(() => import('./TCN_Portal/System_Info'));
-const TCN_Greet = lazy (() => import('./TCN_Members/TCN_Greet'));
-const ForgotPassword = lazy(() => import('./components/ForgotPassword'));
-const ResetPassword = lazy(() => import('./components/ResetPassword'));
-const NamaoTCN = lazy(() => import('./pages/NamaoTCN'));
+const TCN_Greet = lazy(() => import('./TCN_Members/TCN_Greet'));
 
 export const routes: RouteObject[] = [
   {
@@ -34,20 +31,7 @@ export const routes: RouteObject[] = [
     element: <TCN_Greet/>
   },
   {
-    path: '/forgot-password',
-    element: <ForgotPassword/>
-  },
-  {
-    path: '/reset-password',
-    element: <ResetPassword/>
-  },
-   {
-    path: '/pages/NamaoTCN',
-    element: <NamaoTCN/>
-  },
-  {
     path: '/TCN_Portal/System_Info',
     element: <CommSysInfo/>
   }
-  
 ];
