@@ -1,130 +1,237 @@
 import TCNMap from "../components/TCNMap"
 import { Backbtn } from "../components/Backbtn"
 import { Hamburger } from "../components/Hamburger"
+import { motion } from "framer-motion"
 
 export default function AboutTCN() {
+    const fadeUp = {
+        hidden: { opacity: 0, y: 30 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                ease: "easeOut" as const
+            }
+        }
+    }
+
+    const stagger = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    }
+
     const menuItems = [
-        { 
-      label: "About Tataskweyak", 
-      to: "/pages/AboutTCN", 
-      color: "stone" as const 
-    },
-    { 
-      label: "About Who We Are", 
-      to: "/pages/WorldViewHome", 
-      color: "stone" as const 
-    },
-    { 
-      label: "Photo Gallery", 
-      to: "/pages/PhotoGallery", 
-      color: "stone" as const 
-    },
-    { 
-      label: "Home", 
-      to: "/", 
-      color: "stone" as const 
-    },
+        { label: "About Tataskweyak", to: "/pages/AboutTCN", color: "stone" as const },
+        { label: "About Who We Are", to: "/pages/WorldViewHome", color: "stone" as const },
+        { label: "Photo Gallery", to: "/pages/PhotoGallery", color: "stone" as const },
+        { label: "Home", to: "/", color: "stone" as const },
     ]
-    // Desktop Navigation
+
     const DesktopNav = () => (
         <div className="hidden lg:block">
             <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
                 <div className="grid grid-cols-4 gap-4 h-full items-center px-4">
-                <Backbtn />
-                <div />
-                <div />
-                <div />
+                    <Backbtn />
+                    <div />
+                    <div />
+                    <div />
                 </div>
             </div>
         </div>
-        )
+    )
+
     return (
-        <div className="w-screen min-h-screen genbkg">
+        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
             {/* Navigation */}
             <div className="sticky top-0 z-50">
                 <Hamburger menuItems={menuItems} showBackButton={true} />
                 <DesktopNav />
             </div>
-            {/* top cnc banner */}
-            <div className="h-[4vh] lg:h-[4rem]"/>
-            <div className="w-[100vw] h-full">
-                <div className="grid grid-cols-1 h-full">
-                    <div className="flex flex-col justify-center items-center">
-                        <img src='/tcnlogosm.png' className='scale-imagemin'/>
-                        <div className="apptext borderbot mb-14">
-                        Tataskweyak Cree Nation is located on the shore of
-                        Split Lake, Manitoba.
-                        </div>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
-                        <TCNMap/>
-                    </div>
-                </div>
-            </div>
-            <div className='h-[5vh] lg:h-[15vh]'/>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 histbkg">
-                <div className="flex flex-col justify-center items-center p-4">
-                    <img src='/TcnarialVintage.jpg' className='scale-image'/>
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                    <div className="apptext p-4">
-                    Tataskweyak Cree First Nation (TCN) has a rich history as one of the original 
-                    Ininew peoples who have inhabited northern Manitoba for millenia.
+
+            {/* Hero Section */}
+            <section className="relative">
+                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700"
+                     style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/tcnaboutbkg.jpg')" }}>
+                    <div className="relative z-10 text-center px-4">
+                        <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
+                            About Tataskweyak
+                        </h1>
+                        <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
+                            Cree Nation
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div className='h-[5vh] lg:h-[15vh]'/>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="flex flex-col justify-center items-center">
-                    <div className="apptext p-4">
-                    Today, we are a thriving first nation of over 4,000 members, and roughly half live in the community.<br/> 
-                    We continue to blend traditional practices with modern development, maintaining our language, 
-                    cultural values, and connection to the land while embracing education, technology, and economic opportunities.
-                    </div>
+            </section>
+
+            {/* Location & Map Section */}
+            <section className="py-16 md:py-24 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                            Our <span className="text-amber-400">Location</span>
+                        </h2>
+                        <div className="w-20 h-1 bg-amber-500 rounded-full mx-auto mb-6" />
+                        <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+                            Tataskweyak Cree Nation is located on the shore of Split Lake, Manitoba.
+                        </p>
+                    </motion.div>
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="flex justify-center"
+                    >
+                        <TCNMap />
+                    </motion.div>
                 </div>
-                <div className="flex flex-col justify-center items-center p-4">
-                    <img src='/tcnaboutbkg.jpg' className='scale-image'/>
+            </section>
+
+            {/* History Section */}
+            <section className="py-16 md:py-24 px-4 bg-stone-900/50">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={stagger}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                    >
+                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-amber-900/30">
+                            <img src='/TcnarialVintage.jpg' className='w-full h-full object-cover' alt="Historical TCN" />
+                        </motion.div>
+                        <motion.div variants={fadeUp} className="flex flex-col justify-center">
+                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                                Our <span className="text-amber-400">History</span>
+                            </h3>
+                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
+                            <p className="text-stone-300 text-lg leading-relaxed">
+                                Tataskweyak Cree First Nation (TCN) has a rich history as one of the original 
+                                Ininew peoples who have inhabited northern Manitoba for millennia.
+                            </p>
+                        </motion.div>
+                    </motion.div>
                 </div>
-            </div>  
-            <div className='h-[15vh]'/>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="flex flex-col justify-center items-center p-4">
-                    <img src='/Eldersctn.jpg' className='scale-image'/>
+            </section>
+
+            {/* Community Section */}
+            <section className="py-16 md:py-24 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={stagger}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                    >
+                        <motion.div variants={fadeUp} className="flex flex-col justify-center order-2 lg:order-1">
+                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                                Our <span className="text-amber-400">Community</span>
+                            </h3>
+                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
+                            <p className="text-stone-300 text-lg leading-relaxed">
+                                Today, we are a thriving first nation of over 4,000 members, and roughly half live in the community.
+                                We continue to blend traditional practices with modern development, maintaining our language, 
+                                cultural values, and connection to the land while embracing education, technology, and economic opportunities.
+                            </p>
+                        </motion.div>
+                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-amber-900/30 order-1 lg:order-2">
+                            <img src='/tcnaboutbkg.jpg' className='w-full h-full object-cover' alt="TCN Community" />
+                        </motion.div>
+                    </motion.div>
                 </div>
-                <div className="flex flex-col justify-center items-center">
-                    <div className="apptext p-4">
-                    Our First Nation government includes traditional forms of governance like the Elders' Tribunal and a peacekeepers 
-                    system alongside contemporary administrative structures.
-                    </div>
+            </section>
+
+            {/* Governance Section */}
+            <section className="py-16 md:py-24 px-4 bg-stone-900/50">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={stagger}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                    >
+                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-amber-900/30">
+                            <img src='/Eldersctn.jpg' className='w-full h-full object-cover' alt="TCN Elders" />
+                        </motion.div>
+                        <motion.div variants={fadeUp} className="flex flex-col justify-center">
+                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                                Our <span className="text-amber-400">Governance</span>
+                            </h3>
+                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
+                            <p className="text-stone-300 text-lg leading-relaxed">
+                                Our First Nation government includes traditional forms of governance like the Elders' Tribunal and a peacekeepers 
+                                system alongside contemporary administrative structures.
+                            </p>
+                        </motion.div>
+                    </motion.div>
                 </div>
-            </div> 
-            <div className='h-[15vh]'/>
-            <div className="h-full grid grid-cols-1 lg:grid-cols-1">
-                <div className="flex flex-col justify-center items-center p-4">
-                    <img src='/tcnlogosm.png' className='scale-imagemin mb-6'/>
-                    <div className="apptext borderbot mb-8">
-                        Tataskweyak Cree Nation Chief & Council 2025
-                    </div>
-                    <img src="/TCNCnC2025.jpg" className="scale-imagemax"/>
-                </div>
-                <div className="w-full flex flex-col justify-center items-center">
-                    <div className="flex flex-col justify-center items-center p-4 w-9/10 lg:w-2/3"> 
-                        {/* Chief Section - Highlighted */}
-                        <div className="w-full mb-6 bg-amber-900/20 rounded-lg p-4 border border-amber-600/30">
+            </section>
+
+            {/* Chief & Council Section */}
+            <section className="py-16 md:py-24 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <img src='/tcnlogosm.png' className='w-20 md:w-24 mx-auto mb-6' alt="TCN Logo" />
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                            Chief & <span className="text-amber-400">Council 2025</span>
+                        </h2>
+                        <div className="w-20 h-1 bg-amber-500 rounded-full mx-auto" />
+                    </motion.div>
+
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="rounded-2xl overflow-hidden border border-amber-900/30 mb-12"
+                    >
+                        <img src="/TCNCnC2025.jpg" className="w-full h-auto object-cover" alt="TCN Chief and Council 2025" />
+                    </motion.div>
+
+                    <motion.div
+                        variants={stagger}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="max-w-2xl mx-auto"
+                    >
+                        {/* Chief Section */}
+                        <motion.div variants={fadeUp} className="w-full mb-8 bg-amber-900/30 rounded-2xl p-6 border border-amber-600/30">
                             <div className="text-center">
-                                <div className="apptext text-amber-200 font-semibold mb-2 text-lg">
+                                <div className="text-amber-400 font-medium mb-2 text-sm tracking-wider uppercase">
                                     Chief
                                 </div>
-                                <div className="apptext text-amber-100 text-xl font-bold">
+                                <div className="text-2xl md:text-3xl font-bold text-white">
                                     Doreen Spence
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* Councillors Section */}
-                        <div className="w-full space-y-3">
-                            <div className="text-center mb-4">
-                                <div className="apptext text-amber-200 font-semibold text-lg border-b border-amber-600/50 pb-2">
+                        <motion.div variants={fadeUp} className="w-full space-y-3">
+                            <div className="text-center mb-6">
+                                <div className="text-amber-400 font-medium text-sm tracking-wider uppercase">
                                     Council Members
                                 </div>
                             </div>
@@ -137,21 +244,22 @@ export default function AboutTCN() {
                                 "Alwyn Keeper",
                                 "Jonathon Kitchekeesik"
                             ].map((name, index) => (
-                                <div key={index} className="bg-stone-800/30 rounded-md p-3 border border-stone-600/20 hover:bg-stone-700/40 transition-colors duration-200">
-                                    <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-2">
-                                        <div className="apptext text-stone-300 text-sm lg:text-left text-center">
-                                            Councillor
-                                        </div>
-                                        <div className="lg:col-span-2 apptext text-stone-100 font-medium lg:text-left text-center">
-                                            {name}
-                                        </div>
+                                <motion.div 
+                                    key={index} 
+                                    variants={fadeUp}
+                                    className="bg-stone-800/50 rounded-xl p-4 border border-amber-900/30 
+                                             hover:border-amber-600/50 transition-all duration-300"
+                                >
+                                    <div className="flex items-center justify-between">
+                                        <span className="text-stone-400 text-sm">Councillor</span>
+                                        <span className="text-white font-medium">{name}</span>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }

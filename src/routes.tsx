@@ -6,8 +6,6 @@ const PhotoGallery = lazy(() => import('./pages/PhotoGallery'));
 const AboutTCN = lazy(() => import('./pages/AboutTCN'));
 const WorldViewHome = lazy(() => import('./pages/WorldViewHome'));
 const TCNEcDev = lazy(() => import('./pages/TCNEcDev'));
-const CommSysInfo = lazy(() => import('./TCN_Portal/System_Info'));
-const TCN_Greet = lazy(() => import('./TCN_Members/TCN_Greet'));
 
 export const routes: RouteObject[] = [
   {
@@ -26,12 +24,5 @@ export const routes: RouteObject[] = [
     path: '/pages/TCNEcDev',
     element: <TCNEcDev />
   },
-  {
-    path: '/TCN_Members/TCN_Greet',
-    element: <TCN_Greet/>
-  },
-  {
-    path: '/TCN_Portal/System_Info',
-    element: <CommSysInfo/>
-  }
+  
 ];

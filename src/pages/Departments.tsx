@@ -1,106 +1,106 @@
-import  {Link} from "react-router"
 import { Button } from "../components/ui/button"
 import { Backbtn } from "../components/Backbtn"
-import { useWindowWidth } from '../hooks/useWindowWidth'
+import { Hamburger } from "../components/Hamburger"
+import { motion } from "framer-motion"
 
 export default function Departments() {
-    const width = useWindowWidth();
-        const Hamburger = () => {
-            return(
-                <div className="top-0 z-50 sticky">
-                    <div className="menuToggle">
-                        <input type="checkbox"/>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <ul className="menu">
-                            <li className="flex flex-col justify-center items-center">
-                                <Backbtn/>
-                            </li>
-                            <li className="flex flex-col justify-center items-center">
-                                <Link to="/pages/ChiefnCouncil" className='h-full'>
-                                    <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                                        Chief & Council
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className="flex flex-col justify-center items-center">
-                                <Link to="/pages/BandHall" className='h-full'>
-                                    <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                                        Band Office
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className="flex flex-col justify-center items-center">
-                                <Link to="/pages/AboutTCN" className='h-full'>
-                                    <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                                        About Us
-                                    </div>       
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            )
-        }
-        const LinkBar = () => {
-            return(
-                <div className="topnavbar">
-                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-1 h-full">
-                        <Backbtn/>
-                        <Link to="/pages/ChiefnCouncil" className='h-full'>
-                            <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                                Chief & Council
-                            </div>
-                        </Link>
-                        <Link to="/pages/BandHall" className='h-full'>
-                            <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                                Band Office
-                            </div>
-                        </Link>
-                        <Link to="/pages/AboutTCN" className='h-full'>
-                            <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                                About Us
-                            </div>       
-                        </Link>
-                    </div>
-                </div>
-            )
-        }
-        const Navselector = () => {
-            if (width < 480) {
-                return <Hamburger/>
-            }else if (width > 481 && width < 1024){
-                return <LinkBar/>
-            }else {
-                return <LinkBar/>
+    const fadeUp = {
+        hidden: { opacity: 0, y: 30 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                ease: "easeOut" as const
             }
         }
-    return (
-        <div className="w-screen h-screen genbkg overflow-y-scroll">
-            <Navselector/>
-            {/* top cnc banner */}
-            <div className="w-full h-full mt-12">
-                <div className="h-full grid grid-cols-1 lg:grid-cols-2 gap-2 pt-12">
-                    <div className="flex flex-col justify-center items-center p-4">
-                        <img src="/TCNCnC2025.jpg" className="scale-imagemax"/>
-                    </div>
-                    <div className="flex flex-col justify-center items-center">
-                        <img src='/tcnlogosm.png' className='scale-imagemin mb-6'/>
-                        <div className="apptext borderbot mb-6">
-                            Tataskweyak Cree Nation Local By-Laws
-                        </div>
-                       <div className="flex flex-row justify-center items-center gap-4 w-full">
-                       <Button>
-                            Download Document
-                       </Button>
-                       <Button>
-                            View Document
-                       </Button>
-                       </div>
-                    </div>
+    }
+
+    const menuItems = [
+        { label: "About Tataskweyak", to: "/pages/AboutTCN", color: "stone" as const },
+        { label: "About Who We Are", to: "/pages/WorldViewHome", color: "stone" as const },
+        { label: "Photo Gallery", to: "/pages/PhotoGallery", color: "stone" as const },
+        { label: "Home", to: "/", color: "stone" as const },
+    ]
+
+    const DesktopNav = () => (
+        <div className="hidden lg:block">
+            <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
+                <div className="grid grid-cols-4 gap-4 h-full items-center px-4">
+                    <Backbtn />
+                    <div />
+                    <div />
+                    <div />
                 </div>
             </div>
+        </div>
+    )
+
+    return (
+        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
+            {/* Navigation */}
+            <div className="sticky top-0 z-50">
+                <Hamburger menuItems={menuItems} showBackButton={true} />
+                <DesktopNav />
+            </div>
+
+            {/* Hero Section */}
+            <section className="relative">
+                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700"
+                     style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/tcnaboutbkg.jpg')" }}>
+                    <div className="relative z-10 text-center px-4">
+                        <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
+                            Tataskweyak Cree Nation
+                        </h1>
+                        <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
+                            Local By-Laws
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Content Section */}
+            <section className="py-16 md:py-24 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                    >
+                        {/* Image */}
+                        <div className="rounded-2xl overflow-hidden border border-amber-900/30">
+                            <img 
+                                src="/TCNCnC2025.jpg" 
+                                className="w-full h-full object-cover"
+                                alt="TCN Chief and Council 2025"
+                            />
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex flex-col items-center text-center">
+                            <img src='/tcnlogosm.png' className='w-20 md:w-24 mb-6' alt="TCN Logo" />
+                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                                Local <span className="text-amber-400">By-Laws</span>
+                            </h2>
+                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
+                            <p className="text-stone-300 mb-8 max-w-md">
+                                Access and download Tataskweyak Cree Nation's local by-laws and governance documents.
+                            </p>
+                            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+                                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-colors">
+                                    Download Document
+                                </Button>
+                                <Button className="bg-stone-700 hover:bg-stone-600 text-white px-6 py-3 rounded-lg border border-amber-900/30 transition-colors">
+                                    View Document
+                                </Button>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     )
 }

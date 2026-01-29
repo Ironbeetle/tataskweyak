@@ -1,120 +1,137 @@
-import { Link } from "react-router-dom"
 import { ContactUs as ContactForm } from "../components/ContactForm"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { Backbtn } from "../components/Backbtn"
-import { useWindowWidth } from '../hooks/useWindowWidth'
+import { Hamburger } from "../components/Hamburger"
+import { motion } from "framer-motion"
 
 export default function ContactUs() {
-    const width = useWindowWidth();
-    const Hamburger = () => {
-        return(
-            <div className="top-0 z-50 sticky">
-                <div className="menuToggle">
-                    <input type="checkbox"/>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <ul className="menu">
-                        <li className="flex flex-col justify-center items-center">
-                            <Backbtn/>
-                        </li>
-                        <li className="flex flex-col justify-center items-center">
-                            <Link to="/pages/ChiefnCouncil" className='h-full'>
-                                <div className='flex flex-col justify-center h-full navlink apptext'>
-                                    Chief & Council
-                                </div>
-                            </Link>
-                        </li>
-                        <li className="flex flex-col justify-center items-center">
-                            <Link to="/pages/BandHall" className='h-full'>
-                                <div className='flex flex-col justify-center h-full navlink apptext'>
-                                    Band Office
-                                </div>
-                            </Link>
-                        </li>
-                        <li className="flex flex-col justify-center items-center">
-                            <Link to="/pages/AboutTCN" className='h-full'>
-                                <div className='flex flex-col justify-center h-full navlink apptext'>
-                                    About Us
-                                </div>       
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        )
-    }
-    const LinkBar = () => {
-        return(
-            <div className="topnavbar">
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-1 h-full">
-                    <Backbtn/>
-                    <Link to="/pages/ChiefnCouncil" className='h-full'>
-                        <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                            Chief & Council
-                        </div>
-                    </Link>
-                    <Link to="/pages/BandHall" className='h-full'>
-                        <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                            Band Office
-                        </div>
-                    </Link>
-                    <Link to="/pages/AboutTCN" className='h-full'>
-                        <div className='flex flex-col justify-center h-full navlink apptextmini'>
-                            About Us
-                        </div>       
-                    </Link>
-                </div>
-            </div>
-        )
-    }
-    const Navselector = () => {
-        if (width < 480) {
-            return <Hamburger/>
-        }else if (width > 481 && width < 1024){
-            return <LinkBar/>
-        }else {
-            return <LinkBar/>
+    const fadeUp = {
+        hidden: { opacity: 0, y: 30 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                ease: "easeOut" as const
+            }
         }
     }
-    return (
-        <div className="w-full h-full genbkg overflow-y-scroll">
-            <Navselector/>
-            <div className="w-full h-full mt-12">
-                <div className="flex flex-col items-center justify-start p-8">
-                    <img src='/tcnlogosm.png' className='scale-imagemin mb-6'/>
-                    <h1 className="apptext borderbot mb-12">Contact Tataskweyak Cree Nation</h1>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full mb-12">
-                        <div className="flex flex-col items-center p-6 rounded-lg" style={{backgroundColor: "rgba(255,255,255,0.5)"}}>
-                            <Phone className="w-8 h-8 mb-4" />
-                            <h2 className="apptextminib mb-2">Phone</h2>
-                            <a href="tel:+12043422614" className="apptextminib hover:underline">
-                                (204) 342-2045
-                            </a>
-                        </div>
-                        <div className="flex flex-col items-center p-6 rounded-lg" style={{backgroundColor: "rgba(255,255,255,0.5)"}}>
-                            <Mail className="w-8 h-8 mb-4" />
-                            <h2 className="apptextminib mb-2">Email</h2>
-                            <a href="mailto:info@tataskweyak.mb.ca" className="apptextminib hover:underline">
-                                tataskweyak.mb.ca
-                            </a>
-                        </div>
-                        <div className="flex flex-col items-center p-6 rounded-lg" style={{backgroundColor: "rgba(255,255,255,0.5)"}}>
-                            <MapPin className="w-8 h-8 mb-4" />
-                            <h2 className="apptextminib mb-2">Address</h2>
-                            <p className="apptextminib text-center">
-                                Split Lake, MB
-                                <br />
-                                R0B 1P0
-                            </p>
-                        </div>
-                    </div>
-                    <div className="w-full max-w-4xl">
-                        <h2 className="flex flex-col justify-center items-center apptext text-center mb-6 w-full">Send us a message</h2>
-                        <ContactForm />
-                    </div>
+
+    const stagger = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    }
+
+    const menuItems = [
+        { label: "About Tataskweyak", to: "/pages/AboutTCN", color: "stone" as const },
+        { label: "About Who We Are", to: "/pages/WorldViewHome", color: "stone" as const },
+        { label: "Photo Gallery", to: "/pages/PhotoGallery", color: "stone" as const },
+        { label: "Home", to: "/", color: "stone" as const },
+    ]
+
+    const DesktopNav = () => (
+        <div className="hidden lg:block">
+            <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
+                <div className="grid grid-cols-4 gap-4 h-full items-center px-4">
+                    <Backbtn />
+                    <div />
+                    <div />
+                    <div />
                 </div>
             </div>
+        </div>
+    )
+
+    return (
+        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
+            {/* Navigation */}
+            <div className="sticky top-0 z-50">
+                <Hamburger menuItems={menuItems} showBackButton={true} />
+                <DesktopNav />
+            </div>
+
+            {/* Hero Section */}
+            <section className="relative">
+                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700"
+                     style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/tcnaboutbkg.jpg')" }}>
+                    <div className="relative z-10 text-center px-4">
+                        <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
+                            Contact Us
+                        </h1>
+                        <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
+                            Tataskweyak Cree Nation
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Cards Section */}
+            <section className="py-16 md:py-24 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        variants={stagger}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16"
+                    >
+                        <motion.div variants={fadeUp} 
+                            className="flex flex-col items-center p-8 rounded-2xl bg-stone-800/50 
+                                       border border-amber-900/30 hover:border-amber-600/50 transition-all duration-300">
+                            <Phone className="w-10 h-10 mb-4 text-amber-400" />
+                            <h2 className="text-xl font-bold text-white mb-2">Phone</h2>
+                            <a href="tel:+12043422045" className="text-stone-300 hover:text-amber-400 transition-colors">
+                                (204) 342-2045
+                            </a>
+                        </motion.div>
+
+                        <motion.div variants={fadeUp}
+                            className="flex flex-col items-center p-8 rounded-2xl bg-stone-800/50 
+                                       border border-amber-900/30 hover:border-amber-600/50 transition-all duration-300">
+                            <Mail className="w-10 h-10 mb-4 text-amber-400" />
+                            <h2 className="text-xl font-bold text-white mb-2">Email</h2>
+                            <a href="mailto:tcnreception@tataskweyak.ca" className="text-stone-300 hover:text-amber-400 transition-colors">
+                                tcnreception@tataskweyak.ca
+                            </a>
+                        </motion.div>
+
+                        <motion.div variants={fadeUp}
+                            className="flex flex-col items-center p-8 rounded-2xl bg-stone-800/50 
+                                       border border-amber-900/30 hover:border-amber-600/50 transition-all duration-300">
+                            <MapPin className="w-10 h-10 mb-4 text-amber-400" />
+                            <h2 className="text-xl font-bold text-white mb-2">Address</h2>
+                            <p className="text-stone-300 text-center">
+                                Split Lake, MB<br />R0B 1P0
+                            </p>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Contact Form Section */}
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="max-w-4xl mx-auto"
+                    >
+                        <div className="mb-8 text-center">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                                Send us a <span className="text-amber-400">Message</span>
+                            </h2>
+                            <div className="w-20 h-1 bg-amber-500 rounded-full mx-auto" />
+                        </div>
+                        <div className="bg-stone-800/50 rounded-2xl p-6 md:p-8 border border-amber-900/30">
+                            <ContactForm />
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
         </div>
     )
 }

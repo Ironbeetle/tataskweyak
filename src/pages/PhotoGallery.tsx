@@ -78,29 +78,12 @@ export default function PhotoGallery() {
     };
 
     const menuItems = [
-        { 
-      label: "About Tataskweyak", 
-      to: "/pages/AboutTCN", 
-      color: "stone" as const 
-    },
-    { 
-      label: "About Who We Are", 
-      to: "/pages/WorldViewHome", 
-      color: "stone" as const 
-    },
-    { 
-      label: "Photo Gallery", 
-      to: "/pages/PhotoGallery", 
-      color: "stone" as const 
-    },
-    { 
-      label: "Home", 
-      to: "/", 
-      color: "stone" as const 
-    },
+        { label: "About Tataskweyak", to: "/pages/AboutTCN", color: "stone" as const },
+        { label: "About Who We Are", to: "/pages/WorldViewHome", color: "stone" as const },
+        { label: "Photo Gallery", to: "/pages/PhotoGallery", color: "stone" as const },
+        { label: "Home", to: "/", color: "stone" as const },
     ]
 
-    // Desktop Navigation - matching BandHall pattern
     const DesktopNav = () => (
         <div className="hidden lg:block">
             <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
@@ -115,46 +98,46 @@ export default function PhotoGallery() {
     )
 
     return (
-        <div className="w-full min-h-screen genbkg">
+        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
             {/* Navigation */}
-            <div className="sticky top-0 z-50 relative">
+            <div className="sticky top-0 z-50">
                 <Hamburger menuItems={menuItems} showBackButton={true} />
                 <DesktopNav />
             </div>
 
-            {/* Hero Section - matching BandHall pattern */}
+            {/* Hero Section */}
             <section className="relative">
                 <div className="photobkg h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700">
                     <div className="relative z-10 text-center px-4">
-                        <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" />
+                        <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
                         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
-                            Tataskweyak Cree Nation
+                            Photo Gallery
                         </h1>
                         <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
-                            Photo Gallery
+                            Tataskweyak Cree Nation
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Gallery Section - matching BandHall pattern */}
-            <section className="w-full py-8 sm:py-12 lg:py-14 relative">
-                <div className="container mx-auto px-4 w-full lg:w-8/10"> 
+            {/* Gallery Section */}
+            <section className="py-16 md:py-24 px-4">
+                <div className="max-w-7xl mx-auto"> 
                     <Tabs 
                         defaultValue="history" 
-                        className="w-full h-full"
+                        className="w-full"
                         onValueChange={(value) => setActiveTab(value as keyof typeof GALLERY_IMAGES)}
                     >
-                        <TabsList className="grid grid-cols-2 mb-6 sm:mb-8 w-full h-full max-w-md sm:max-w-lg lg:max-w-7xl mx-auto bg-amber-100/95 backdrop-blur-sm rounded-lg p-1 sm:p-2 border border-amber-200/60 shadow-lg">
+                        <TabsList className="grid grid-cols-2 mb-8 w-full max-w-md mx-auto bg-stone-800/50 backdrop-blur-sm rounded-2xl p-2 border border-amber-900/30">
                             <TabsTrigger
                                 value="history"
-                                className="data-[state=active]:bg-green-600 data-[state=active]:text-white text-amber-800 rounded-md transition-all duration-200 py-2 sm:py-3 lg:py-4 font-medium"
+                                className="data-[state=active]:bg-amber-600 data-[state=active]:text-white text-stone-300 rounded-xl transition-all duration-200 py-3 font-medium"
                             >
                                 <span className="text-sm sm:text-base lg:text-lg">History</span>
                             </TabsTrigger>
                             <TabsTrigger
                                 value="cultural"
-                                className="data-[state=active]:bg-green-600 data-[state=active]:text-white text-amber-800 rounded-md transition-all duration-200 py-2 sm:py-3 lg:py-4 font-medium"
+                                className="data-[state=active]:bg-amber-600 data-[state=active]:text-white text-stone-300 rounded-xl transition-all duration-200 py-3 font-medium"
                             >
                                 <span className="text-sm sm:text-base lg:text-lg">Land</span>
                             </TabsTrigger>
@@ -166,7 +149,7 @@ export default function PhotoGallery() {
                                 <TabsContent key={category} value={category} className="mt-0">
                                     {isLoading ? (
                                         <div className="w-full h-64 flex items-center justify-center">
-                                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div>
+                                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-400"></div>
                                         </div>
                                     ) : (
                                         <motion.div
@@ -187,7 +170,7 @@ export default function PhotoGallery() {
                                                                     src={img.src} 
                                                                     alt={img.alt}
                                                                     loading="lazy"
-                                                                    className="w-full h-full object-contain rounded-lg border-2 border-amber-200/50 shadow-lg bg-amber-50/95 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:border-amber-300"
+                                                                    className="w-full h-full object-contain rounded-2xl border-2 border-amber-900/30 shadow-lg bg-stone-800/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:border-amber-600/50"
                                                                     decoding="async"
                                                                 />
                                                             </div>
@@ -195,8 +178,8 @@ export default function PhotoGallery() {
                                                     ))}
                                                 </CarouselContent>
                                                 <div className="hidden md:block">
-                                                    <CarouselPrevious className="bg-amber-100/90 border-amber-300 hover:bg-amber-200/90 text-amber-800" />
-                                                    <CarouselNext className="bg-amber-100/90 border-amber-300 hover:bg-amber-200/90 text-amber-800" />
+                                                    <CarouselPrevious className="bg-stone-800/90 border-amber-900/30 hover:bg-stone-700/90 hover:border-amber-600/50 text-amber-400" />
+                                                    <CarouselNext className="bg-stone-800/90 border-amber-900/30 hover:bg-stone-700/90 hover:border-amber-600/50 text-amber-400" />
                                                 </div>
                                             </Carousel>
                                         </motion.div>

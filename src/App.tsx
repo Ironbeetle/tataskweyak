@@ -1,6 +1,7 @@
 import './App.css'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import VisitorCount from './components/VisitorCount'
 
 function App() {
   const fadeUp = {
@@ -30,18 +31,10 @@ function App() {
     {
       id: 1,
       title: "Story of the Namao",
-      date: "Dec 19, 2025",
+      date: "January 22, 2026",
       excerpt: "The Lake Sturgeon (Namao) is in danger of extinction.",
-      image: "/sturgeonimage1.jpg",
+      image: "/SturgeonBanner.jpg",
       category: "Events"
-    },
-    {
-      id: 2,
-      title: "Winter Road Update",
-      date: "Dec 12, 2025",
-      excerpt: "Important information regarding winter road conditions and travel advisories.",
-      image: "/news/road.jpg",
-      category: "Announcements"
     }
   ]
 
@@ -49,7 +42,7 @@ function App() {
     { title: "About TCN", to: "/pages/AboutTCN", icon: "🏛️" },
     { title: "Who We Are", to: "/pages/WorldViewHome", icon: "🌿" },
     { title: "Photo Gallery", to: "/pages/PhotoGallery", icon: "📷" },
-    { title: "Member Portal", to: "/TCN_Members/TCN_Greet", icon: "👤" },
+    { title: "Member Portal", to: "https://tcnaux.ca", icon: "👤" },
   ]
 
   return (
@@ -62,7 +55,7 @@ function App() {
             <img src="/TCNairnsky.jpg" className="w-full h-full object-cover" alt="TCN Territory"/>
           </div>
           <div className="block lg:hidden h-full">
-            <img src="/mobiletcnbkg22.jpg" className="w-full h-full object-cover" alt="TCN Territory"/>
+            <img src="/TCNairnsky.jpg" className="w-full h-full object-cover" alt="TCN Territory"/>
           </div>
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-emerald-950"/>
@@ -105,25 +98,25 @@ function App() {
       </section>
 
       {/* Quick Links Bar */}
-      <section className="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-amber-900/30">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="sticky top-0 z-100 bg-stone-900/95 backdrop-blur-md border-b border-amber-900/30">
+        <div className="max-w-7xl mx-auto px-2 md:px-4">
           <motion.div 
             variants={stagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="flex justify-center gap-2 md:gap-8 py-4"
+            className="flex justify-evenly md:justify-center md:gap-8 py-3 md:py-4"
           >
             {quickLinks.map((link, index) => (
-              <motion.div key={index} variants={fadeUp}>
+              <motion.div key={index} variants={fadeUp} className="flex-1 md:flex-none">
                 <Link 
                   to={link.to}
-                  className="flex flex-col md:flex-row items-center gap-1 md:gap-2 px-3 md:px-5 py-2 rounded-lg
+                  className="flex flex-col items-center justify-center px-1 md:px-5 py-2 rounded-lg
                            text-stone-300 hover:text-amber-300 hover:bg-amber-900/20 
-                           transition-all duration-300 group"
+                           transition-all duration-300 group md:flex-row md:gap-2"
                 >
-                  <span className="text-xl md:text-2xl group-hover:scale-110 transition-transform">{link.icon}</span>
-                  <span className="text-xs md:text-sm font-medium">{link.title}</span>
+                  <div className="text-xl md:text-2xl group-hover:scale-110 transition-transform mb-1 md:mb-0 text-center w-full md:w-auto">{link.icon}</div>
+                  <div className="text-[10px] md:text-sm font-medium leading-tight text-center">{link.title}</div>
                 </Link>
               </motion.div>
             ))}
@@ -145,14 +138,14 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Latest <span className="text-amber-400">News</span>
               </h2>
-              <Link 
-                to="/pages/CnCannouncements"
+              <a 
+                href="https://namaotcn.ca"
                 className="text-amber-400 hover:text-amber-300 text-sm font-medium 
                          flex items-center gap-1 transition-colors"
               >
                 View All 
                 <span className="text-lg">→</span>
-              </Link>
+              </a>
             </div>
             <div className="w-20 h-1 bg-amber-500 rounded-full"/>
           </motion.div>
@@ -167,7 +160,7 @@ function App() {
           >
             {/* Featured Large Card */}
             <motion.div variants={fadeUp} className="w-full">
-              <div
+              <a href="https://namaotcn.ca/" target="_blank" rel="noopener noreferrer"
                 className="group relative h-full min-h-[300px] md:min-h-[400px] rounded-2xl overflow-hidden
                             border border-amber-900/30 bg-stone-800/50 hover:border-amber-600/50 
                             transition-all duration-500">
@@ -197,7 +190,7 @@ function App() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </a>
             </motion.div>
 
            
@@ -260,7 +253,7 @@ function App() {
                 </div>
               </Link>
 
-              <a href="https://tcntrsc.ca" className="flex-1 group">
+              <a href="https://tcntrsc.ca" target="_blank" rel="noopener noreferrer" className="flex-1 group">
                 <div className="relative h-full min-h-[200px] rounded-2xl overflow-hidden 
                               border border-amber-900/30 hover:border-amber-600/50 transition-all">
                   <img 
@@ -316,7 +309,7 @@ function App() {
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <Link to="/TCN_Members/TCN_Greet" className="group block">
+              <a href="https://tcnaux.ca/" target="_blank" rel="noopener noreferrer" className="group block">
                 <div className="relative rounded-2xl overflow-hidden border border-amber-900/30 
                               hover:border-amber-600/50 transition-all bg-stone-700/30">
                   <div className="aspect-[16/10]">
@@ -330,7 +323,7 @@ function App() {
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-3xl">👤</span>
                         <h3 className="text-2xl font-bold text-white group-hover:text-amber-300 transition-colors">
-                          TCN Member Portal
+                          TCN Members
                         </h3>
                       </div>
                       <p className="text-stone-300 text-sm">
@@ -339,22 +332,25 @@ function App() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-stone-950 border-t border-amber-900/30">
+      <footer className="bg-green-950 border-t border-amber-900/30">
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {/* Logo & Description */}
             <div className="md:col-span-1">
               <img src="/tcnlogolg.png" className="w-20 mb-4" alt="TCN Logo"/>
               <p className="text-stone-400 text-sm">
-                Tataskweyak Cree Nation - Keepers of the land, water, and sky since time immemorial.
+                Tataskweyak Cree Nation
               </p>
+              <div className="mt-4">
+                <VisitorCount />
+              </div>
             </div>
 
             {/* Contact Info */}
@@ -382,9 +378,9 @@ function App() {
                 <Link to="/pages/WorldViewHome" className="text-stone-400 hover:text-amber-400 transition-colors">
                   Who We Are
                 </Link>
-                <Link to="/TCN_Members/TCN_Greet" className="text-stone-400 hover:text-amber-400 transition-colors">
-                  Member Portal
-                </Link>
+                <a href="https://tcnaux.ca" className="text-stone-400 hover:text-amber-400 transition-colors">
+                  TCN Member Portal
+                </a>
                 <Link to="/pages/ContactUs" className="text-stone-400 hover:text-amber-400 transition-colors">
                   Contact Us
                 </Link>
