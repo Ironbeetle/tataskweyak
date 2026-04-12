@@ -35,7 +35,7 @@ export default function AboutTCN() {
 
     const DesktopNav = () => (
         <div className="hidden lg:block">
-            <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
+            <div className="bg-[#778873] backdrop-blur-sm border-b border-[#A1BC98]">
                 <div className="grid grid-cols-4 gap-4 h-full items-center px-4">
                     <Backbtn />
                     <div />
@@ -47,7 +47,7 @@ export default function AboutTCN() {
     )
 
     return (
-        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
+        <div className="w-full min-h-screen bg-[#F1F3E0]">
             {/* Navigation */}
             <div className="sticky top-0 z-50">
                 <Hamburger menuItems={menuItems} showBackButton={true} />
@@ -56,14 +56,14 @@ export default function AboutTCN() {
 
             {/* Hero Section */}
             <section className="relative">
-                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700"
+                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-[#778873]"
                      style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/tcnaboutbkg.jpg')" }}>
                     <div className="relative z-10 text-center px-4">
                         <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
-                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-white drop-shadow-lg">
                             About Tataskweyak
                         </h1>
-                        <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
+                        <p className="text-md md:text-base lg:text-lg text-white drop-shadow-md">
                             Cree Nation
                         </p>
                     </div>
@@ -80,11 +80,11 @@ export default function AboutTCN() {
                         viewport={{ once: true }}
                         className="text-center mb-12"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                            Our <span className="text-amber-400">Location</span>
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#778873] mb-2">
+                            Our <span className="text-[#A1BC98]">Location</span>
                         </h2>
-                        <div className="w-20 h-1 bg-amber-500 rounded-full mx-auto mb-6" />
-                        <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+                        <div className="w-20 h-1 bg-[#A1BC98] rounded-full mx-auto mb-6" />
+                        <p className="text-gray-700 text-[1.25rem] max-w-2xl mx-auto">
                             Tataskweyak Cree Nation is located on the shore of Split Lake, Manitoba.
                         </p>
                     </motion.div>
@@ -101,7 +101,7 @@ export default function AboutTCN() {
             </section>
 
             {/* History Section */}
-            <section className="py-16 md:py-24 px-4 bg-stone-900/50">
+            <section className="py-16 md:py-24 px-4 bg-[#F1F3E0]">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         variants={stagger}
@@ -110,15 +110,15 @@ export default function AboutTCN() {
                         viewport={{ once: true }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
                     >
-                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-amber-900/30">
+                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-[#A1BC98]">
                             <img src='/TcnarialVintage.jpg' className='w-full h-full object-cover' alt="Historical TCN" />
                         </motion.div>
                         <motion.div variants={fadeUp} className="flex flex-col justify-center">
-                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                                Our <span className="text-amber-400">History</span>
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#778873] mb-4">
+                                Our <span className="text-[#A1BC98]">History</span>
                             </h3>
-                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
-                            <p className="text-stone-300 text-lg leading-relaxed">
+                            <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
+                            <p className="text-gray-700 text-[1.25rem] leading-relaxed">
                                 Tataskweyak Cree First Nation (TCN) has a rich history as one of the original 
                                 Ininew peoples who have inhabited northern Manitoba for millennia.
                             </p>
@@ -138,17 +138,17 @@ export default function AboutTCN() {
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
                     >
                         <motion.div variants={fadeUp} className="flex flex-col justify-center order-2 lg:order-1">
-                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                                Our <span className="text-amber-400">Community</span>
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#778873] mb-4">
+                                Our <span className="text-[#A1BC98]">Community</span>
                             </h3>
-                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
-                            <p className="text-stone-300 text-lg leading-relaxed">
+                            <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
+                            <p className="text-gray-700 text-[1.25rem] leading-relaxed">
                                 Today, we are a thriving first nation of over 4,000 members, and roughly half live in the community.
                                 We continue to blend traditional practices with modern development, maintaining our language, 
                                 cultural values, and connection to the land while embracing education, technology, and economic opportunities.
                             </p>
                         </motion.div>
-                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-amber-900/30 order-1 lg:order-2">
+                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-[#A1BC98] order-1 lg:order-2">
                             <img src='/tcnaboutbkg.jpg' className='w-full h-full object-cover' alt="TCN Community" />
                         </motion.div>
                     </motion.div>
@@ -156,7 +156,7 @@ export default function AboutTCN() {
             </section>
 
             {/* Governance Section */}
-            <section className="py-16 md:py-24 px-4 bg-stone-900/50">
+            <section className="py-16 md:py-24 px-4 bg-[#F1F3E0]">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         variants={stagger}
@@ -165,15 +165,15 @@ export default function AboutTCN() {
                         viewport={{ once: true }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
                     >
-                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-amber-900/30">
+                        <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden border border-[#A1BC98]">
                             <img src='/Eldersctn.jpg' className='w-full h-full object-cover' alt="TCN Elders" />
                         </motion.div>
                         <motion.div variants={fadeUp} className="flex flex-col justify-center">
-                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                                Our <span className="text-amber-400">Governance</span>
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#778873] mb-4">
+                                Our <span className="text-[#A1BC98]">Governance</span>
                             </h3>
-                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
-                            <p className="text-stone-300 text-lg leading-relaxed">
+                            <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
+                            <p className="text-gray-700 text-[1.25rem] leading-relaxed">
                                 Our First Nation government includes traditional forms of governance like the Elders' Tribunal and a peacekeepers 
                                 system alongside contemporary administrative structures.
                             </p>
@@ -193,10 +193,10 @@ export default function AboutTCN() {
                         className="text-center mb-12"
                     >
                         <img src='/tcnlogosm.png' className='w-20 md:w-24 mx-auto mb-6' alt="TCN Logo" />
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                            Chief & <span className="text-amber-400">Council 2025</span>
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#778873] mb-2">
+                            Chief & <span className="text-[#A1BC98]">Council 2025</span>
                         </h2>
-                        <div className="w-20 h-1 bg-amber-500 rounded-full mx-auto" />
+                        <div className="w-20 h-1 bg-[#A1BC98] rounded-full mx-auto" />
                     </motion.div>
 
                     <motion.div
@@ -204,7 +204,7 @@ export default function AboutTCN() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="rounded-2xl overflow-hidden border border-amber-900/30 mb-12"
+                        className="rounded-2xl overflow-hidden border border-[#A1BC98] mb-12"
                     >
                         <img src="/TCNCnC2025.jpg" className="w-full h-auto object-cover" alt="TCN Chief and Council 2025" />
                     </motion.div>
@@ -217,12 +217,12 @@ export default function AboutTCN() {
                         className="max-w-2xl mx-auto"
                     >
                         {/* Chief Section */}
-                        <motion.div variants={fadeUp} className="w-full mb-8 bg-amber-900/30 rounded-2xl p-6 border border-amber-600/30">
+                        <motion.div variants={fadeUp} className="w-full mb-8 bg-[#F1F3E0] rounded-2xl p-6 border border-[#A1BC98]">
                             <div className="text-center">
-                                <div className="text-amber-400 font-medium mb-2 text-sm tracking-wider uppercase">
+                                <div className="text-[#A1BC98] font-medium mb-2 text-lg tracking-wider uppercase">
                                     Chief
                                 </div>
-                                <div className="text-2xl md:text-3xl font-bold text-white">
+                                <div className="text-2xl md:text-3xl font-bold text-[rgba(26,26,26,0.8)]">
                                     Doreen Spence
                                 </div>
                             </div>
@@ -231,28 +231,28 @@ export default function AboutTCN() {
                         {/* Councillors Section */}
                         <motion.div variants={fadeUp} className="w-full space-y-3">
                             <div className="text-center mb-6">
-                                <div className="text-amber-400 font-medium text-sm tracking-wider uppercase">
+                                <div className="text-[#A1BC98] font-medium text-lg tracking-wider uppercase">
                                     Council Members
                                 </div>
                             </div>
                             
                             {[
-                                "Ivan Keeper",
+                                "Alwyne Keeper",
                                 "Abbie Garson Wavey", 
-                                "Joan Ouskan",
-                                "Cynthia Ouskan",
-                                "Alwyn Keeper",
-                                "Jonathon Kitchekeesik"
+                                "Jonathan Kitchekeesik",
+                                "Joan Ouskun",
+                                "Ivan Keeper",
+                                "Cynthia Ouskun" 
                             ].map((name, index) => (
                                 <motion.div 
                                     key={index} 
                                     variants={fadeUp}
-                                    className="bg-stone-800/50 rounded-xl p-4 border border-amber-900/30 
-                                             hover:border-amber-600/50 transition-all duration-300"
+                                    className="bg-[#F1F3E0] rounded-xl p-4 border border-[#A1BC98] 
+                                             hover:border-[#A1BC98] transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-between">
-                                        <span className="text-stone-400 text-sm">Councillor</span>
-                                        <span className="text-white font-medium">{name}</span>
+                                        <span className="text-gray-600 text-sm">Councillor</span>
+                                        <span className="text-[rgba(26,26,26,0.8)] font-medium">{name}</span>
                                     </div>
                                 </motion.div>
                             ))}

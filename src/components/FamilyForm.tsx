@@ -66,7 +66,7 @@ export default function FamilyForm({ onSubmit, initialData, isLoading = false }:
                 <input
                   id="spouse_fname"
                   type="text"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("spouse_fname")}
                   disabled={isLoading}
                   placeholder="First name"
@@ -79,7 +79,7 @@ export default function FamilyForm({ onSubmit, initialData, isLoading = false }:
                 <input
                   id="spouse_lname"
                   type="text"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("spouse_lname")}
                   disabled={isLoading}
                   placeholder="Last name"
@@ -95,7 +95,7 @@ export default function FamilyForm({ onSubmit, initialData, isLoading = false }:
               id="dependents"
               type="number"
               min="0"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("dependents", { 
                 required: "Number of dependents is required",
                 valueAsNumber: true,
@@ -126,7 +126,7 @@ export default function FamilyForm({ onSubmit, initialData, isLoading = false }:
 
           <Button 
             type="submit" 
-            className="w-full bg-amber-700 hover:bg-amber-800"
+            className="w-full bg-[#778873] hover:bg-[#778873]"
             disabled={isLoading}
           >
             {isLoading ? "Saving..." : "Save Family Information"}

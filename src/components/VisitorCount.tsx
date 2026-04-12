@@ -18,7 +18,7 @@ export default function VisitorCount() {
   }, []);
 
   return (
-    <div className="text-stone-300 text-sm">
+    <div className="text-[#F1F3E0] text-sm">
       {count === null ? 'Visitors: —' : `Visitors: ${count}`}
     </div>
   );

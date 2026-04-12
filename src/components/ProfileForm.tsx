@@ -61,7 +61,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <Label htmlFor="gender">Gender (Optional)</Label>
             <select
               id="gender"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("gender")}
               disabled={isLoading}
             >
@@ -77,7 +77,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <Label htmlFor="o_r_status">Reserve Status *</Label>
             <select
               id="o_r_status"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("o_r_status", { 
                 required: "Reserve status is required" 
               })}
@@ -98,7 +98,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <input
               id="community"
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("community", { 
                 required: "Community is required" 
               })}
@@ -116,7 +116,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <textarea
               id="address"
               rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("address", { 
                 required: "Address is required" 
               })}
@@ -134,7 +134,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <input
               id="phone_number"
               type="tel"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("phone_number", { 
                 required: "Phone number is required",
                 pattern: {
@@ -156,7 +156,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <input
               id="email"
               type="email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("email", { 
                 required: "Email is required",
                 pattern: {
@@ -178,7 +178,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
             <input
               id="image_url"
               type="url"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("image_url", {
                 pattern: {
                   value: /^https?:\/\/.+/,
@@ -201,7 +201,7 @@ export default function ProfileForm({ onSubmit, initialData, isLoading = false }
 
           <Button 
             type="submit" 
-            className="w-full bg-amber-700 hover:bg-amber-800"
+            className="w-full bg-[#778873] hover:bg-[#778873]"
             disabled={isLoading}
           >
             {isLoading ? "Saving..." : "Save Profile"}

@@ -94,7 +94,7 @@
 /* Interactive elements styling */
 .panel{
   background-size: cover;
-  background-image: url("/tcnaboutbkg.jpg");
+  background-image: url("/regbkg.jpg");
   background-position: center;
   background-repeat: no-repeat;
 } 
@@ -145,7 +145,7 @@
   border-radius: 1rem;
   border-width: 0.25rem;
   border-style: solid;
-  border-color:#704F4F;
+  border-color:#778873;
   box-shadow: 3px 10px 8px rgba(0, 0, 0, 0.3);
   pointer-events: auto;
   transition: all 0.3s ease;
@@ -154,11 +154,11 @@
 .paneltall{
   position: relative;
   overflow: hidden;
-  background-color:#539B67;
+  background-color:#A1BC98;
   border-radius: 1rem;
   border-width: 0.25rem;
   border-style: solid;
-  border-color:#704F4F;
+  border-color:#778873;
   box-shadow: 3px 10px 8px rgba(0, 0, 0, 0.3);
   pointer-events: auto;
   transition: all 0.3s ease;
@@ -171,19 +171,19 @@
 .borderbot{
   border-bottom-style: solid;
   border-bottom-width: 0.25rem;
-  border-bottom-color:#704F4F;
+  border-bottom-color:#778873;
 }
 
 .bordertop{
   border-top-style: solid;
   border-top-width: 0.25rem;
-  border-top-color:#704F4F;
+  border-top-color:#778873;
 }
 
 .borderright{
   border-right-style: solid;
   border-right-width: 0.25rem;
-  border-right-color:#704F4F;
+  border-right-color:#778873;
 }
 /* Link styling */
 .btnlayer {
@@ -264,9 +264,9 @@
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background-color: #529C67;
+  background-color: #A1BC98;
   border-radius: 1rem;
-  border-color:#704F4F;
+  border-color:#778873;
   border-width: 0.15rem;
   z-index: 100;
   transition: all 0.3s ease;
@@ -321,7 +321,7 @@ a {
 }
 
 .apptextw  {
-  font-size: clamp(1.5rem, 1.5vw + 1.2rem, 3rem);
+  font-size: clamp(1.5rem, 0.964rem + 1.429vw, 2.25rem);
   font-weight: 500;
   color: rgba(250, 250, 250, 0.7);
   padding: 0;

@@ -66,7 +66,7 @@ export default function ResetPassword() {
 
   if (!token) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-amber-50 px-4">
+      <div className="min-h-screen flex items-center justify-center bg-[#F1F3E0] px-4">
         <Card className="w-full max-w-md">
           <CardHeader>
             <CardTitle>Invalid Reset Link</CardTitle>
@@ -76,7 +76,7 @@ export default function ResetPassword() {
           </CardHeader>
           <CardContent>
             <Link to="/forgot-password">
-              <Button className="w-full bg-amber-700 hover:bg-amber-800">
+              <Button className="w-full bg-[#778873] hover:bg-[#778873]">
                 Request New Reset Link
               </Button>
             </Link>
@@ -87,7 +87,7 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-amber-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#F1F3E0] px-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Reset Your Password</CardTitle>
@@ -111,7 +111,7 @@ export default function ResetPassword() {
                 <input
                   id="password"
                   type="password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("password", { 
                     required: "Password is required",
                     minLength: {
@@ -131,7 +131,7 @@ export default function ResetPassword() {
                 <input
                   id="confirmPassword"
                   type="password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("confirmPassword", { 
                     required: "Please confirm your password",
                     validate: value => value === password || "Passwords do not match"
@@ -151,7 +151,7 @@ export default function ResetPassword() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-amber-700 hover:bg-amber-800"
+                className="w-full bg-[#778873] hover:bg-[#778873]"
                 disabled={isLoading}
               >
                 {isLoading ? "Resetting Password..." : "Reset Password"}

@@ -86,7 +86,7 @@ export default function PhotoGallery() {
 
     const DesktopNav = () => (
         <div className="hidden lg:block">
-            <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
+            <div className="bg-[#778873] backdrop-blur-sm border-b border-[#A1BC98]">
                 <div className="grid grid-cols-4 gap-4 h-full items-center px-4">
                     <Backbtn />
                     <div/>
@@ -98,7 +98,7 @@ export default function PhotoGallery() {
     )
 
     return (
-        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
+        <div className="w-full min-h-screen bg-[#F1F3E0]">
             {/* Navigation */}
             <div className="sticky top-0 z-50">
                 <Hamburger menuItems={menuItems} showBackButton={true} />
@@ -107,13 +107,13 @@ export default function PhotoGallery() {
 
             {/* Hero Section */}
             <section className="relative">
-                <div className="photobkg h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700">
+                <div className="photobkg h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-[#778873]">
                     <div className="relative z-10 text-center px-4">
                         <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
-                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-white drop-shadow-lg">
                             Photo Gallery
                         </h1>
-                        <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
+                        <p className="text-md md:text-base lg:text-lg text-white drop-shadow-md">
                             Tataskweyak Cree Nation
                         </p>
                     </div>
@@ -128,16 +128,16 @@ export default function PhotoGallery() {
                         className="w-full"
                         onValueChange={(value) => setActiveTab(value as keyof typeof GALLERY_IMAGES)}
                     >
-                        <TabsList className="grid grid-cols-2 mb-8 w-full max-w-md mx-auto bg-stone-800/50 backdrop-blur-sm rounded-2xl p-2 border border-amber-900/30">
+                        <TabsList className="grid grid-cols-2 mb-8 w-full max-w-md h-auto mx-auto bg-[#F1F3E0] backdrop-blur-sm rounded-2xl p-2 border border-[#A1BC98]">
                             <TabsTrigger
                                 value="history"
-                                className="data-[state=active]:bg-amber-600 data-[state=active]:text-white text-stone-300 rounded-xl transition-all duration-200 py-3 font-medium"
+                                className="data-[state=active]:bg-[#778873] data-[state=active]:text-white text-[rgba(26,26,26,0.6)] rounded-xl transition-all duration-200 py-3 font-medium"
                             >
                                 <span className="text-sm sm:text-base lg:text-lg">History</span>
                             </TabsTrigger>
                             <TabsTrigger
                                 value="cultural"
-                                className="data-[state=active]:bg-amber-600 data-[state=active]:text-white text-stone-300 rounded-xl transition-all duration-200 py-3 font-medium"
+                                className="data-[state=active]:bg-[#778873] data-[state=active]:text-white text-[rgba(26,26,26,0.6)] rounded-xl transition-all duration-200 py-3 font-medium"
                             >
                                 <span className="text-sm sm:text-base lg:text-lg">Land</span>
                             </TabsTrigger>
@@ -149,7 +149,7 @@ export default function PhotoGallery() {
                                 <TabsContent key={category} value={category} className="mt-0">
                                     {isLoading ? (
                                         <div className="w-full h-64 flex items-center justify-center">
-                                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-400"></div>
+                                            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#778873]"></div>
                                         </div>
                                     ) : (
                                         <motion.div
@@ -170,7 +170,7 @@ export default function PhotoGallery() {
                                                                     src={img.src} 
                                                                     alt={img.alt}
                                                                     loading="lazy"
-                                                                    className="w-full h-full object-contain rounded-2xl border-2 border-amber-900/30 shadow-lg bg-stone-800/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:border-amber-600/50"
+                                                                    className="w-full h-full object-contain rounded-2xl border-2 border-[#A1BC98] shadow-lg bg-[#F1F3E0] backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:border-[#A1BC98]"
                                                                     decoding="async"
                                                                 />
                                                             </div>
@@ -178,8 +178,8 @@ export default function PhotoGallery() {
                                                     ))}
                                                 </CarouselContent>
                                                 <div className="hidden md:block">
-                                                    <CarouselPrevious className="bg-stone-800/90 border-amber-900/30 hover:bg-stone-700/90 hover:border-amber-600/50 text-amber-400" />
-                                                    <CarouselNext className="bg-stone-800/90 border-amber-900/30 hover:bg-stone-700/90 hover:border-amber-600/50 text-amber-400" />
+                                                    <CarouselPrevious className="bg-[#F1F3E0] border-[#A1BC98] hover:bg-[#778873] hover:border-[#A1BC98] text-[#778873]" />
+                                                    <CarouselNext className="bg-[#F1F3E0] border-[#A1BC98] hover:bg-[#778873] hover:border-[#A1BC98] text-[#778873]" />
                                                 </div>
                                             </Carousel>
                                         </motion.div>

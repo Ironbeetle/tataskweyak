@@ -25,7 +25,7 @@ export default function Departments() {
 
     const DesktopNav = () => (
         <div className="hidden lg:block">
-            <div className="bg-amber-900 backdrop-blur-sm border-b border-amber-600/50">
+            <div className="bg-[#778873] backdrop-blur-sm border-b border-[#A1BC98]">
                 <div className="grid grid-cols-4 gap-4 h-full items-center px-4">
                     <Backbtn />
                     <div />
@@ -37,7 +37,7 @@ export default function Departments() {
     )
 
     return (
-        <div className="w-full min-h-screen bg-gradient-to-b from-emerald-950 to-emerald-900">
+        <div className="w-full min-h-screen bg-[#F1F3E0]">
             {/* Navigation */}
             <div className="sticky top-0 z-50">
                 <Hamburger menuItems={menuItems} showBackButton={true} />
@@ -46,14 +46,14 @@ export default function Departments() {
 
             {/* Hero Section */}
             <section className="relative">
-                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-green-700"
+                <div className="h-[30vh] sm:h-[30vh] lg:h-[40vh] flex items-center justify-center bg-cover bg-center border-b-4 border-[#778873]"
                      style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/tcnaboutbkg.jpg')" }}>
                     <div className="relative z-10 text-center px-4">
                         <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
-                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-amber-50 drop-shadow-lg">
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-white drop-shadow-lg">
                             Tataskweyak Cree Nation
                         </h1>
-                        <p className="text-md md:text-base lg:text-lg text-amber-100 drop-shadow-md">
+                        <p className="text-md md:text-base lg:text-lg text-white drop-shadow-md">
                             Local By-Laws
                         </p>
                     </div>
@@ -71,7 +71,7 @@ export default function Departments() {
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
                     >
                         {/* Image */}
-                        <div className="rounded-2xl overflow-hidden border border-amber-900/30">
+                        <div className="rounded-2xl overflow-hidden border border-[#A1BC98]">
                             <img 
                                 src="/TCNCnC2025.jpg" 
                                 className="w-full h-full object-cover"
@@ -82,18 +82,18 @@ export default function Departments() {
                         {/* Content */}
                         <div className="flex flex-col items-center text-center">
                             <img src='/tcnlogosm.png' className='w-20 md:w-24 mb-6' alt="TCN Logo" />
-                            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                                Local <span className="text-amber-400">By-Laws</span>
+                            <h2 className="text-2xl md:text-3xl font-bold text-[#778873] mb-2">
+                                Local <span className="text-[#A1BC98]">By-Laws</span>
                             </h2>
-                            <div className="w-20 h-1 bg-amber-500 rounded-full mb-6" />
-                            <p className="text-stone-300 mb-8 max-w-md">
+                            <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
+                            <p className="text-[rgba(26,26,26,0.6)] text-lg mb-8 max-w-md">
                                 Access and download Tataskweyak Cree Nation's local by-laws and governance documents.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
-                                <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition-colors">
+                                <Button className="bg-[#F1F3E0]0 hover:bg-[#778873] text-white px-6 py-3 rounded-lg transition-colors">
                                     Download Document
                                 </Button>
-                                <Button className="bg-stone-700 hover:bg-stone-600 text-white px-6 py-3 rounded-lg border border-amber-900/30 transition-colors">
+                                <Button className="bg-[#778873] hover:bg-[#778873] text-white px-6 py-3 rounded-lg border border-[#A1BC98] transition-colors">
                                     View Document
                                 </Button>
                             </div>

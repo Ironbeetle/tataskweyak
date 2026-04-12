@@ -5,12 +5,12 @@ import VisitorCount from './components/VisitorCount'
 
 function App() {
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 15 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.5,
+        duration: 1.2,
         ease: "easeOut" as const
       }
     }
@@ -19,7 +19,7 @@ function App() {
   const stagger = {
     hidden: { opacity: 0 },
     show: {
-      opacity: 1.5,
+      opacity: 1,
       transition: {
         staggerChildren: 0.15
       }
@@ -42,11 +42,11 @@ function App() {
     { title: "About TCN", to: "/pages/AboutTCN", icon: "🏛️" },
     { title: "Who We Are", to: "/pages/WorldViewHome", icon: "🌿" },
     { title: "Photo Gallery", to: "/pages/PhotoGallery", icon: "📷" },
-    { title: "Member Portal", to: "https://tcnaux.ca", icon: "👤" },
+    { title: "TCN Achimowin", to: "https://tcnaux.ca", icon: "👤" },
   ]
 
   return (
-    <div className="relative w-full min-h-screen bg-amber-400">
+    <div className="relative w-full min-h-screen bg-[#F1F3E0]">
       {/* Hero Section - Full viewport with video/image background */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background */}
@@ -57,8 +57,8 @@ function App() {
           <div className="block lg:hidden h-full">
             <img src="/TCNairnsky.jpg" className="w-full h-full object-cover" alt="TCN Territory"/>
           </div>
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-emerald-950"/>
+          {/* Simple dark overlay */}
+          <div className="absolute inset-0 bg-black/40"/>
         </div>
 
         {/* Hero Content */}
@@ -98,7 +98,7 @@ function App() {
       </section>
 
       {/* Quick Links Bar */}
-      <section className="sticky top-0 z-100 bg-stone-900/95 backdrop-blur-md border-b border-amber-900/30">
+      <section className="sticky top-0 z-100 bg-[#778873] border-b-4 border-[#A1BC98]">
         <div className="max-w-7xl mx-auto px-2 md:px-4">
           <motion.div 
             variants={stagger}
@@ -112,7 +112,7 @@ function App() {
                 <Link 
                   to={link.to}
                   className="flex flex-col items-center justify-center px-1 md:px-5 py-2 rounded-lg
-                           text-stone-300 hover:text-amber-300 hover:bg-amber-900/20 
+                           text-white hover:bg-[#A1BC98] 
                            transition-all duration-300 group md:flex-row md:gap-2"
                 >
                   <div className="text-xl md:text-2xl group-hover:scale-110 transition-transform mb-1 md:mb-0 text-center w-full md:w-auto">{link.icon}</div>
@@ -125,7 +125,7 @@ function App() {
       </section>
 
       {/* Featured News Section */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-emerald-950 to-emerald-900">
+      <section className="py-16 md:py-24 px-4 bg-[#F1F3E0]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -135,19 +135,21 @@ function App() {
             className="mb-12"
           >
             <div className="flex items-center justify-between mb-2">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Latest <span className="text-amber-400">News</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#778873]">
+                Latest <span className="text-[#A1BC98]">News</span>
               </h2>
               <a 
                 href="https://namaotcn.ca"
-                className="text-amber-400 hover:text-amber-300 text-sm font-medium 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#778873] hover:text-[#A1BC98] text-sm font-medium 
                          flex items-center gap-1 transition-colors"
               >
                 View All 
                 <span className="text-lg">→</span>
               </a>
             </div>
-            <div className="w-20 h-1 bg-amber-500 rounded-full"/>
+            <div className="w-20 h-1 bg-[#A1BC98] rounded-full"/>
           </motion.div>
 
           {/* News Grid - Bento Style */}
@@ -162,9 +164,9 @@ function App() {
             <motion.div variants={fadeUp} className="w-full">
               <a href="https://namaotcn.ca/" target="_blank" rel="noopener noreferrer"
                 className="group relative h-full min-h-[300px] md:min-h-[400px] rounded-2xl overflow-hidden
-                            border border-amber-900/30 bg-stone-800/50 hover:border-amber-600/50 
+                            border-4 border-[#A1BC98] bg-white shadow-lg hover:shadow-xl 
                             transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-transparent z-10"/>
+                <div className="absolute inset-0 bg-black/30 z-10"/>
                 <img 
                   src="/sturgeonimage1.jpg" 
                   className="absolute inset-0 w-full h-full object-cover 
@@ -172,20 +174,20 @@ function App() {
                   alt="Featured news"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-20">
-                  <span className="inline-block px-3 py-1 bg-amber-500 text-stone-900 text-xs font-bold 
+                  <span className="inline-block px-3 py-1 bg-[#A1BC98] text-white text-xs font-bold 
                                  rounded-full mb-4">
                     Featured
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 
-                               group-hover:text-amber-300 transition-colors">
+                               group-hover:text-[#D2DCB6] transition-colors">
                     {featuredNews[0].title}
                   </h3>
-                  <p className="text-stone-300 text-sm md:text-base mb-4 line-clamp-2">
+                  <p className="text-white/90 text-sm md:text-base mb-4 line-clamp-2">
                     {featuredNews[0].excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-amber-400/70 text-sm">{featuredNews[0].date}</span>
-                    <span className="text-amber-400 group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-white/70 text-sm">{featuredNews[0].date}</span>
+                    <span className="text-[#D2DCB6] group-hover:translate-x-2 transition-transform duration-300">
                       Read more →
                     </span>
                   </div>
@@ -199,7 +201,7 @@ function App() {
       </section>
 
       {/* Main Content Sections */}
-      <section className="py-16 md:py-24 px-4 bg-emerald-900">
+      <section className="py-16 md:py-24 px-4 bg-[#D2DCB6]">
         <div className="max-w-7xl mx-auto">
           {/* About Section - Asymmetric Layout */}
           <motion.div
@@ -209,7 +211,7 @@ function App() {
             viewport={{ once: true }}
             className="grid lg:grid-cols-5 gap-8 mb-20"
           >
-            <div className="lg:col-span-3 relative rounded-2xl overflow-hidden group">
+            <div className="lg:col-span-3 relative rounded-2xl overflow-hidden group border-4 border-[#778873] shadow-lg">
               <Link to="/pages/AboutTCN" className="block">
                 <div className="aspect-[16/10] lg:aspect-[16/9]">
                   <img 
@@ -217,16 +219,16 @@ function App() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     alt="About TCN"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/50 to-transparent"/>
+                  <div className="absolute inset-0 bg-black/50"/>
                   <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-12">
-                    <span className="text-amber-400 text-sm font-medium mb-2 tracking-wider">DISCOVER</span>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-amber-300 transition-colors">
+                    <span className="text-[#D2DCB6] text-sm font-medium mb-2 tracking-wider">DISCOVER</span>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 group-hover:text-[#D2DCB6] transition-colors">
                       About Tataskweyak<br/>Cree Nation
                     </h3>
-                    <p className="text-stone-300 max-w-md mb-6 text-sm md:text-base">
+                    <p className="text-white/90 max-w-md mb-6 text-sm md:text-base">
                       Learn about our rich history, vibrant culture, and the community that calls this beautiful land home.
                     </p>
-                    <span className="inline-flex items-center text-amber-400 font-medium group-hover:gap-3 gap-2 transition-all">
+                    <span className="inline-flex items-center text-[#D2DCB6] font-medium group-hover:gap-3 gap-2 transition-all">
                       Learn More <span className="text-xl">→</span>
                     </span>
                   </div>
@@ -237,16 +239,16 @@ function App() {
             <div className="lg:col-span-2 flex flex-col gap-6">
               <Link to="/pages/WorldViewHome" className="flex-1 group">
                 <div className="relative h-full min-h-[200px] rounded-2xl overflow-hidden 
-                              border border-amber-900/30 hover:border-amber-600/50 transition-all">
+                              border-4 border-[#778873] shadow-lg hover:shadow-xl transition-all">
                   <img 
                     src="/Whoweare.jpg" 
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     alt="Who We Are"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30"/>
+                  <div className="absolute inset-0 bg-black/50"/>
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <span className="text-amber-400 text-xs font-medium mb-1 tracking-wider">EXPLORE</span>
-                    <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                    <span className="text-[#D2DCB6] text-xs font-medium mb-1 tracking-wider">EXPLORE</span>
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#D2DCB6] transition-colors">
                       About Who We Are
                     </h3>
                   </div>
@@ -255,16 +257,16 @@ function App() {
 
               <a href="https://tcntrsc.ca" target="_blank" rel="noopener noreferrer" className="flex-1 group">
                 <div className="relative h-full min-h-[200px] rounded-2xl overflow-hidden 
-                              border border-amber-900/30 hover:border-amber-600/50 transition-all">
+                              border-4 border-[#778873] shadow-lg hover:shadow-xl transition-all">
                   <img 
                     src="/ourhomebkg.jpg" 
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     alt="Managing Our Territory"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30"/>
+                  <div className="absolute inset-0 bg-black/50"/>
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <span className="text-amber-400 text-xs font-medium mb-1 tracking-wider">STEWARDSHIP</span>
-                    <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                    <span className="text-[#D2DCB6] text-xs font-medium mb-1 tracking-wider">STEWARDSHIP</span>
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#D2DCB6] transition-colors">
                       Managing Our Territory
                     </h3>
                   </div>
@@ -283,23 +285,23 @@ function App() {
           >
             <motion.div variants={fadeUp}>
               <Link to="/pages/PhotoGallery" className="group block">
-                <div className="relative rounded-2xl overflow-hidden border border-amber-900/30 
-                              hover:border-amber-600/50 transition-all bg-stone-700/30">
+                <div className="relative rounded-2xl overflow-hidden border-4 border-[#778873] 
+                              shadow-lg hover:shadow-xl transition-all bg-white">
                   <div className="aspect-[16/10]">
                     <img 
                       src="/historyimg4.jpg" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       alt="Photo Gallery"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"/>
+                    <div className="absolute inset-0 bg-black/40"/>
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-3xl">📷</span>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-amber-300 transition-colors">
+                        <h3 className="text-2xl font-bold text-white group-hover:text-[#D2DCB6] transition-colors">
                           Photo Gallery
                         </h3>
                       </div>
-                      <p className="text-stone-300 text-sm">
+                      <p className="text-white/90 text-sm">
                         Browse through our collection of community photos and historical images.
                       </p>
                     </div>
@@ -310,23 +312,23 @@ function App() {
 
             <motion.div variants={fadeUp}>
               <a href="https://tcnaux.ca/" target="_blank" rel="noopener noreferrer" className="group block">
-                <div className="relative rounded-2xl overflow-hidden border border-amber-900/30 
-                              hover:border-amber-600/50 transition-all bg-stone-700/30">
+                <div className="relative rounded-2xl overflow-hidden border-4 border-[#778873] 
+                              shadow-lg hover:shadow-xl transition-all bg-white">
                   <div className="aspect-[16/10]">
                     <img 
-                      src="/bandofficetab.jpg" 
+                      src="/achimowintownbkg.jpg" 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       alt="Member Portal"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"/>
+                    <div className="absolute inset-0 bg-black/40"/>
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-3xl">👤</span>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-amber-300 transition-colors">
-                          TCN Members
+                        <h3 className="text-2xl font-bold text-white group-hover:text-[#D2DCB6] transition-colors">
+                          TCN Achimowin
                         </h3>
                       </div>
-                      <p className="text-stone-300 text-sm">
+                      <p className="text-white/90 text-sm">
                         Access member services, documents, and community resources.
                       </p>
                     </div>
@@ -339,13 +341,13 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-green-950 border-t border-amber-900/30">
+      <footer className="bg-[#778873] border-t-4 border-[#A1BC98]">
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {/* Logo & Description */}
             <div className="md:col-span-1">
               <img src="/tcnlogolg.png" className="w-20 mb-4" alt="TCN Logo"/>
-              <p className="text-stone-400 text-sm">
+              <p className="text-white text-sm">
                 Tataskweyak Cree Nation
               </p>
               <div className="mt-4">
@@ -356,7 +358,7 @@ function App() {
             {/* Contact Info */}
             <div className="md:col-span-1">
               <h4 className="text-white font-bold mb-4">Contact Us</h4>
-              <div className="text-stone-400 text-sm space-y-2">
+              <div className="text-[#F1F3E0] text-sm space-y-2">
                 <p>Tataskweyak Cree Nation</p>
                 <p>Split Lake, MB R0B 1P0</p>
                 <p>Phone: (204) 342-2045</p>
@@ -369,22 +371,22 @@ function App() {
             <div className="md:col-span-1">
               <h4 className="text-white font-bold mb-4">Quick Links</h4>
               <div className="grid grid-cols-2 gap-2 text-sm">
-                <Link to="/pages/AboutTCN" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Link to="/pages/AboutTCN" className="text-[#F1F3E0] hover:text-[#D2DCB6] transition-colors">
                   About TCN
                 </Link>
-                <Link to="/pages/PhotoGallery" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Link to="/pages/PhotoGallery" className="text-[#F1F3E0] hover:text-[#D2DCB6] transition-colors">
                   Photo Gallery
                 </Link>
-                <Link to="/pages/WorldViewHome" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Link to="/pages/WorldViewHome" className="text-[#F1F3E0] hover:text-[#D2DCB6] transition-colors">
                   Who We Are
                 </Link>
-                <a href="https://tcnaux.ca" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <a href="https://tcnaux.ca" className="text-[#F1F3E0] hover:text-[#D2DCB6] transition-colors">
                   TCN Member Portal
                 </a>
-                <Link to="/pages/ContactUs" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <Link to="/pages/ContactUs" className="text-[#F1F3E0] hover:text-[#D2DCB6] transition-colors">
                   Contact Us
                 </Link>
-                <a href="https://tcntrsc.ca" className="text-stone-400 hover:text-amber-400 transition-colors">
+                <a href="https://tcntrsc.ca" className="text-[#F1F3E0] hover:text-[#D2DCB6] transition-colors">
                   TRSC
                 </a>
               </div>
@@ -392,8 +394,8 @@ function App() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-12 pt-8 border-t border-stone-800 text-center">
-            <p className="text-stone-500 text-sm">
+          <div className="mt-12 pt-8 border-t border-[#A1BC98] text-center">
+            <p className="text-[#F1F3E0] text-sm">
               © {new Date().getFullYear()} Tataskweyak Cree Nation. All rights reserved.
             </p>
           </div>

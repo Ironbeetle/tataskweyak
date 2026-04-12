@@ -45,7 +45,7 @@ export default function ForgotPassword() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-amber-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#F1F3E0] px-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Forgot Password</CardTitle>
@@ -74,7 +74,7 @@ export default function ForgotPassword() {
                 <input
                   id="email"
                   type="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("email", { 
                     required: "Email is required",
                     pattern: {
@@ -98,7 +98,7 @@ export default function ForgotPassword() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-amber-700 hover:bg-amber-800"
+                className="w-full bg-[#778873] hover:bg-[#778873]"
                 disabled={isLoading}
               >
                 {isLoading ? "Sending..." : "Send Reset Link"}

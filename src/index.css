@@ -1,4 +1,20 @@
 @import "tailwindcss";
+
+/* Custom Theme Colors - Sage Green Palette */
+@theme {
+  --color-sage-50: #F1F3E0;
+  --color-sage-100: #E8ECD2;
+  --color-sage-200: #D2DCB6;
+  --color-sage-300: #BCC8A7;
+  --color-sage-400: #A1BC98;
+  --color-sage-500: #8FA988;
+  --color-sage-600: #778873;
+  --color-sage-700: #5F6D5C;
+  --color-sage-800: #47524A;
+  --color-sage-900: #2F3730;
+  --color-sage-950: #1A1F1A;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;

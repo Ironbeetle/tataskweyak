@@ -47,7 +47,7 @@ export default function Login() {
             <input
               id="username"
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("username", { required: "Username is required" })}
               disabled={isLoading}
             />
@@ -61,7 +61,7 @@ export default function Login() {
             <input
               id="password"
               type="password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
               {...register("password", { required: "Password is required" })}
               disabled={isLoading}
             />
@@ -78,7 +78,7 @@ export default function Login() {
 
           <Button 
             type="submit" 
-            className="w-full bg-amber-700 hover:bg-amber-800"
+            className="w-full bg-[#778873] hover:bg-[#778873]"
             disabled={isLoading}
           >
             {isLoading ? "Logging in..." : "Login"}
@@ -87,7 +87,7 @@ export default function Login() {
           <div className="text-center">
             <a 
               href="/forgot-password" 
-              className="text-sm text-amber-700 hover:text-amber-800 hover:underline"
+              className="text-sm text-[#778873] hover:text-[#778873] hover:underline"
             >
               Forgot your password?
             </a>

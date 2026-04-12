@@ -77,7 +77,7 @@ export default function Register() {
                 <input
                   id="t_number"
                   type="text"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("t_number", { 
                     required: "Treaty number is required"
                   })}
@@ -102,7 +102,7 @@ export default function Register() {
                 <input
                   id="username"
                   type="text"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("username", { 
                     required: "Username is required",
                     minLength: {
@@ -122,7 +122,7 @@ export default function Register() {
                 <input
                   id="email"
                   type="email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("email", { 
                     required: "Email is required",
                     pattern: {
@@ -142,7 +142,7 @@ export default function Register() {
                 <input
                   id="password"
                   type="password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("password", { 
                     required: "Password is required",
                     minLength: {
@@ -162,7 +162,7 @@ export default function Register() {
                 <input
                   id="confirmPassword"
                   type="password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#A1BC98]"
                   {...register("confirmPassword", { 
                     required: "Please confirm your password",
                     validate: value => value === password || "Passwords do not match"
@@ -183,7 +183,7 @@ export default function Register() {
 
             <Button 
               type="submit" 
-              className="w-full bg-amber-700 hover:bg-amber-800"
+              className="w-full bg-[#778873] hover:bg-[#778873]"
               disabled={isLoading}
             >
               {isLoading ? "Activating Account..." : "Activate Account"}

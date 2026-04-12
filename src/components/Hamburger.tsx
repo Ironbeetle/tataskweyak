@@ -21,9 +21,9 @@ export const Hamburger = ({
 
   const getButtonStyles = (color: MenuItem["color"] = "emerald") => {
     const colorMap = {
-      emerald: "bg-emerald-600 hover:bg-emerald-700",
-      stone: "bg-stone-600 hover:bg-stone-700", 
-      amber: "bg-amber-600 hover:bg-amber-700",
+      emerald: "bg-[#778873] hover:bg-[#A1BC98]",
+      stone: "bg-[#778873] hover:bg-[#A1BC98]", 
+      amber: "bg-[#A1BC98] hover:bg-[#778873]",
       red: "bg-red-600 hover:bg-red-700"
     }
     return `${colorMap[color]} text-white px-6 py-4 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-105`
@@ -36,13 +36,13 @@ export const Hamburger = ({
           onClick={() => setIsOpen(!isOpen)}
           className="w-8 h-8 flex flex-col justify-center space-y-1 z-20 relative"
         >
-          <span className={`block w-8 h-1 bg-emerald-700 rounded-sm transform transition duration-300 ${isOpen ? 'rotate-45 translate-y-2 bg-white' : ''}`}></span>
-          <span className={`block w-8 h-1 bg-emerald-700 rounded-sm transition duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-8 h-1 bg-emerald-700 rounded-sm transform transition duration-300 ${isOpen ? '-rotate-45 -translate-y-2 bg-white' : ''}`}></span>
+          <span className={`block w-8 h-1 bg-[#778873] rounded-sm transform transition duration-300 ${isOpen ? 'rotate-45 translate-y-2 bg-white' : ''}`}></span>
+          <span className={`block w-8 h-1 bg-[#778873] rounded-sm transition duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-8 h-1 bg-[#778873] rounded-sm transform transition duration-300 ${isOpen ? '-rotate-45 -translate-y-2 bg-white' : ''}`}></span>
         </button>
         
         <ul 
-          className={`fixed top-0 left-0 w-screen h-screen bg-stone-900/95 backdrop-blur-sm flex flex-col justify-center items-center space-y-8 transition-transform duration-300 z-50 ${
+          className={`fixed top-0 left-0 w-screen h-screen bg-[#F1F3E0] backdrop-blur-sm flex flex-col justify-center items-center space-y-8 transition-transform duration-300 z-50 ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
           onClick={() => setIsOpen(false)} // Close when clicking anywhere on overlay
