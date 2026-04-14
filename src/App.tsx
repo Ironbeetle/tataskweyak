@@ -42,7 +42,7 @@ function App() {
     { title: "About TCN", to: "/pages/AboutTCN", icon: "🏛️" },
     { title: "Who We Are", to: "/pages/WorldViewHome", icon: "🌿" },
     { title: "Photo Gallery", to: "/pages/PhotoGallery", icon: "📷" },
-    { title: "TCN Achimowin", to: "https://tcnaux.ca", icon: "👤" },
+    { title: "TCN Achimowin", to: "/pages/Achimowin", icon: "👤" },
   ]
 
   return (
@@ -311,7 +311,7 @@ function App() {
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <a href="https://tcnaux.ca/" target="_blank" rel="noopener noreferrer" className="group block">
+              <Link to="/pages/Achimowin" className="group block">
                 <div className="relative rounded-2xl overflow-hidden border-4 border-[#778873] 
                               shadow-lg hover:shadow-xl transition-all bg-white">
                   <div className="aspect-[16/10]">
@@ -334,7 +334,7 @@ function App() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

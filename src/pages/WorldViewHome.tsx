@@ -6,12 +6,12 @@ import '../App.css'
 
 export default function WorldViewHome() {
     const fadeUp = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 15 },
         show: {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1.5,
+                duration: 1,
                 ease: "easeOut" as const
             }
         }

@@ -5,12 +5,12 @@ import { motion } from "framer-motion"
 
 export default function AboutTCN() {
     const fadeUp = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 15 },
         show: {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1.5,
+                duration: 1,
                 ease: "easeOut" as const
             }
         }
@@ -72,7 +72,7 @@ export default function AboutTCN() {
 
             {/* Location & Map Section */}
             <section className="py-16 md:py-24 px-4">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[80%] mx-auto">
                     <motion.div
                         variants={fadeUp}
                         initial="hidden"
@@ -80,11 +80,11 @@ export default function AboutTCN() {
                         viewport={{ once: true }}
                         className="text-center mb-12"
                     >
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#778873] mb-2">
+                        <h2 className="apptext mb-2">
                             Our <span className="text-[#A1BC98]">Location</span>
                         </h2>
                         <div className="w-20 h-1 bg-[#A1BC98] rounded-full mx-auto mb-6" />
-                        <p className="text-gray-700 text-[1.25rem] max-w-2xl mx-auto">
+                        <p className="apptext max-w-2xl mx-auto">
                             Tataskweyak Cree Nation is located on the shore of Split Lake, Manitoba.
                         </p>
                     </motion.div>
@@ -102,7 +102,7 @@ export default function AboutTCN() {
 
             {/* History Section */}
             <section className="py-16 md:py-24 px-4 bg-[#F1F3E0]">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[80%] mx-auto">
                     <motion.div
                         variants={stagger}
                         initial="hidden"
@@ -114,11 +114,11 @@ export default function AboutTCN() {
                             <img src='/TcnarialVintage.jpg' className='w-full h-full object-cover' alt="Historical TCN" />
                         </motion.div>
                         <motion.div variants={fadeUp} className="flex flex-col justify-center">
-                            <h3 className="text-2xl md:text-3xl font-bold text-[#778873] mb-4">
+                            <h3 className="apptext mb-4">
                                 Our <span className="text-[#A1BC98]">History</span>
                             </h3>
                             <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
-                            <p className="text-gray-700 text-[1.25rem] leading-relaxed">
+                            <p className="apptext leading-relaxed">
                                 Tataskweyak Cree First Nation (TCN) has a rich history as one of the original 
                                 Ininew peoples who have inhabited northern Manitoba for millennia.
                             </p>
@@ -129,7 +129,7 @@ export default function AboutTCN() {
 
             {/* Community Section */}
             <section className="py-16 md:py-24 px-4">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[80%] mx-auto">
                     <motion.div
                         variants={stagger}
                         initial="hidden"
@@ -138,11 +138,11 @@ export default function AboutTCN() {
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
                     >
                         <motion.div variants={fadeUp} className="flex flex-col justify-center order-2 lg:order-1">
-                            <h3 className="text-2xl md:text-3xl font-bold text-[#778873] mb-4">
+                            <h3 className="apptext mb-4">
                                 Our <span className="text-[#A1BC98]">Community</span>
                             </h3>
                             <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
-                            <p className="text-gray-700 text-[1.25rem] leading-relaxed">
+                            <p className="apptext leading-relaxed">
                                 Today, we are a thriving first nation of over 4,000 members, and roughly half live in the community.
                                 We continue to blend traditional practices with modern development, maintaining our language, 
                                 cultural values, and connection to the land while embracing education, technology, and economic opportunities.
@@ -157,7 +157,7 @@ export default function AboutTCN() {
 
             {/* Governance Section */}
             <section className="py-16 md:py-24 px-4 bg-[#F1F3E0]">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[80%] mx-auto">
                     <motion.div
                         variants={stagger}
                         initial="hidden"
@@ -169,11 +169,11 @@ export default function AboutTCN() {
                             <img src='/Eldersctn.jpg' className='w-full h-full object-cover' alt="TCN Elders" />
                         </motion.div>
                         <motion.div variants={fadeUp} className="flex flex-col justify-center">
-                            <h3 className="text-2xl md:text-3xl font-bold text-[#778873] mb-4">
+                            <h3 className="apptext mb-4">
                                 Our <span className="text-[#A1BC98]">Governance</span>
                             </h3>
                             <div className="w-20 h-1 bg-[#A1BC98] rounded-full mb-6" />
-                            <p className="text-gray-700 text-[1.25rem] leading-relaxed">
+                            <p className="apptext leading-relaxed">
                                 Our First Nation government includes traditional forms of governance like the Elders' Tribunal and a peacekeepers 
                                 system alongside contemporary administrative structures.
                             </p>
@@ -184,7 +184,7 @@ export default function AboutTCN() {
 
             {/* Chief & Council Section */}
             <section className="py-16 md:py-24 px-4">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[80%] mx-auto">
                     <motion.div
                         variants={fadeUp}
                         initial="hidden"
@@ -193,7 +193,7 @@ export default function AboutTCN() {
                         className="text-center mb-12"
                     >
                         <img src='/tcnlogosm.png' className='w-20 md:w-24 mx-auto mb-6' alt="TCN Logo" />
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#778873] mb-2">
+                        <h2 className="apptext mb-2">
                             Chief & <span className="text-[#A1BC98]">Council 2025</span>
                         </h2>
                         <div className="w-20 h-1 bg-[#A1BC98] rounded-full mx-auto" />
@@ -222,7 +222,7 @@ export default function AboutTCN() {
                                 <div className="text-[#A1BC98] font-medium mb-2 text-lg tracking-wider uppercase">
                                     Chief
                                 </div>
-                                <div className="text-2xl md:text-3xl font-bold text-[rgba(26,26,26,0.8)]">
+                                <div className="text-xl md:text-3xl font-bold text-[rgba(26,26,26,0.8)]">
                                     Doreen Spence
                                 </div>
                             </div>
@@ -231,7 +231,7 @@ export default function AboutTCN() {
                         {/* Councillors Section */}
                         <motion.div variants={fadeUp} className="w-full space-y-3">
                             <div className="text-center mb-6">
-                                <div className="text-[#A1BC98] font-medium text-lg tracking-wider uppercase">
+                                <div className="text-[#A1BC98] font-medium text-xl tracking-wider uppercase">
                                     Council Members
                                 </div>
                             </div>
@@ -251,7 +251,7 @@ export default function AboutTCN() {
                                              hover:border-[#A1BC98] transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-between">
-                                        <span className="text-gray-600 text-sm">Councillor</span>
+                                        <span className="text-gray-600 text-md">Councillor</span>
                                         <span className="text-[rgba(26,26,26,0.8)] font-medium">{name}</span>
                                     </div>
                                 </motion.div>
