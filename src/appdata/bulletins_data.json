@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Spring Community Cleanup",
+    "subject": "Annual community cleanup event scheduled. All members are encouraged to participate in keeping our community beautiful.",
+    "content": "<p>Join us for our annual Spring Community Cleanup! We'll be gathering at the community centre at 9:00 AM on Saturday.</p><p>Supplies will be provided including gloves, bags, and refreshments. Lunch will be served at noon.</p><p>Let's work together to keep Tataskweyak beautiful for everyone.</p>",
+    "poster_url": null,
+    "category": "COMMUNITY_EVENTS",
+    "created": "2026-04-15T10:00:00Z",
+    "updated": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Chief & Council Meeting Summary – April 2026",
+    "subject": "Summary of the latest Chief & Council session covering infrastructure updates, housing, and community programs.",
+    "content": "<p>The Chief & Council met on April 10, 2026 to discuss the following items:</p><ul><li>Infrastructure improvements on main roads</li><li>New housing project updates</li><li>Summer youth employment program planning</li><li>Water treatment facility maintenance schedule</li></ul><p>A full report will be available at the band office.</p>",
+    "poster_url": null,
+    "category": "CHIEF_COUNCIL",
+    "created": "2026-04-12T14:30:00Z",
+    "updated": "2026-04-12T14:30:00Z"
+  },
+  {
+    "id": "3",
+    "title": "Community Office Hours Update",
+    "subject": "Updated office hours for the community administration building effective immediately.",
+    "content": "<p>Please note the updated hours for the community administration office:</p><p><strong>Monday to Friday:</strong> 8:30 AM – 4:30 PM</p><p><strong>Saturday:</strong> Closed</p><p><strong>Sunday:</strong> Closed</p><p>For after-hours emergencies, please call the main line.</p>",
+    "poster_url": null,
+    "category": "COMMUNITY_ADMIN",
+    "created": "2026-04-10T09:00:00Z",
+    "updated": "2026-04-10T09:00:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Youth Basketball Tournament",
+    "subject": "Calling all youth! Sign up for the upcoming basketball tournament at the recreation centre.",
+    "content": null,
+    "poster_url": null,
+    "category": "COMMUNITY_EVENTS",
+    "created": "2026-04-08T16:00:00Z",
+    "updated": "2026-04-08T16:00:00Z"
+  },
+  {
+    "id": "5",
+    "title": "Water Advisory Lifted",
+    "subject": "The boil water advisory has been lifted. Tap water is safe to drink as of April 5, 2026.",
+    "content": "<p>We are pleased to announce that the boil water advisory has been officially lifted following successful testing results.</p><p>Tap water is now safe for consumption. Thank you for your patience during this time.</p>",
+    "poster_url": null,
+    "category": "COMMUNITY_ADMIN",
+    "created": "2026-04-05T11:00:00Z",
+    "updated": "2026-04-05T11:00:00Z"
+  },
+  {
+    "id": "6",
+    "title": "Summer Employment Program – Now Accepting Applications",
+    "subject": "Youth and young adults are invited to apply for summer positions across various community departments.",
+    "content": "<p>Tataskweyak Cree Nation is now accepting applications for the 2026 Summer Employment Program.</p><p><strong>Eligibility:</strong> TCN members aged 16–30</p><p><strong>Positions available in:</strong></p><ul><li>Parks & Recreation</li><li>Community Maintenance</li><li>Administration Support</li><li>Youth Programs</li></ul><p>Applications are available at the band office or online through Achimowin. Deadline: May 1, 2026.</p>",
+    "poster_url": null,
+    "category": "CHIEF_COUNCIL",
+    "created": "2026-04-02T08:00:00Z",
+    "updated": "2026-04-02T08:00:00Z"
+  }
+]

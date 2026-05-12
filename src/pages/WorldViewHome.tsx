@@ -238,6 +238,7 @@ export default function WorldViewHome() {
                             <motion.h2
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
+                                viewport={{once:true}}
                                 transition={{ duration: 1, ease: "easeInOut" }} 
                                 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
                                     Adapt & Prosper
@@ -245,6 +246,7 @@ export default function WorldViewHome() {
                             <motion.p 
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
+                                viewport={{once:true}}
                                 transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}    
                                 className="apptextw bg-gray-600/40 backdrop-blur-lg p-6 rounded-2xl">
                                 As we modernize and evolve,
@@ -255,12 +257,14 @@ export default function WorldViewHome() {
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
+                            viewport={{once:true}}
                             transition={{ delay: 1, staggerChildren: 1.5 }}
                             className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"
                         >
                             <motion.img
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
+                                viewport={{once:true}}
                                 transition={{ duration: 1.5, delay: 1.5, ease: "easeInOut" }}
                                 className="rounded-xl object-cover w-full h-32 md:h-48 border border-[#A1BC98]"
                                 loading="lazy"
@@ -270,6 +274,7 @@ export default function WorldViewHome() {
                             <motion.img
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
+                                viewport={{once:true}}
                                 transition={{ duration: 1.5, delay: 1.7, ease: "easeInOut" }}
                                 className="rounded-xl object-cover w-full h-32 md:h-48 border border-[#A1BC98]"
                                 loading="lazy"
@@ -279,6 +284,7 @@ export default function WorldViewHome() {
                             <motion.img
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
+                                viewport={{once:true}}
                                 transition={{ duration: 1.5, delay: 1.9, ease: "easeInOut" }}
                                 className="rounded-xl object-cover w-full h-32 md:h-48 border border-[#A1BC98]"
                                 loading="lazy"
@@ -288,6 +294,7 @@ export default function WorldViewHome() {
                             <motion.img
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
+                                viewport={{once:true}}
                                 transition={{ duration: 1.5, delay: 2.1, ease: "easeInOut" }}
                                 className="rounded-xl object-cover w-full h-32 md:h-48 border border-[#A1BC98]"
                                 loading="lazy"

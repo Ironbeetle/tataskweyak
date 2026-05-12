@@ -61,11 +61,8 @@ export default function AboutTCN() {
                     <div className="relative z-10 text-center px-4">
                         <img src="/tcnlogosm.png" className="mx-auto w-16 sm:w-20 lg:w-24 mb-4 drop-shadow-lg" alt="TCN Logo" />
                         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-2 text-white drop-shadow-lg">
-                            About Tataskweyak
+                            About Tataskweyak Cree Nation
                         </h1>
-                        <p className="text-md md:text-base lg:text-lg text-white drop-shadow-md">
-                            Cree Nation
-                        </p>
                     </div>
                 </div>
             </section>
